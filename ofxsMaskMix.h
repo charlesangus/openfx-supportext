@@ -29,14 +29,14 @@
 
 #include <ofxsImageEffect.h>
 
-#define kParamPremult "premult"
-#define kParamPremultLabel "(Un)premult"
+#define kParamPremult "unPremultBy"
+#define kParamPremultLabel "(Un)premult by"
 #define kParamPremultHint \
-    "Divide the image by the alpha channel before processing, and re-multiply it afterwards. " \
-    "Use if the input images are premultiplied."
+    "Divide the image by the chosen channel before processing, and re-multiply it afterwards. " \
+    "Use if the input images are premultiplied by that channel."
 
-#define kParamPremultChannel "premultChannel"
-#define kParamPremultChannelLabel "By"
+#define kParamPremultChannel "unPremultByChannel"
+#define kParamPremultChannelLabel ""
 #define kParamPremultChannelHint \
     "The channel to use for (un)premult."
 #define kParamPremultChannelR "R", "R channel from input", "r"
