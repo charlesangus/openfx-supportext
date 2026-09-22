@@ -32,13 +32,14 @@
 #define kParamPremult "unPremultBy"
 #define kParamPremultLabel "(Un)premult by"
 #define kParamPremultHint \
-    "Divide the image by the chosen channel before processing, and re-multiply it afterwards. " \
-    "Use if the input images are premultiplied by that channel."
+    "Divide the image by the alpha channel before processing, and re-multiply it afterwards. " \
+    "Use if the input images are premultiplied."
 
 #define kParamPremultChannel "unPremultByChannel"
 #define kParamPremultChannelLabel ""
 #define kParamPremultChannelHint \
-    "The channel to use for (un)premult."
+    "The channel to use for (un)premult. Not yet implemented: (un)premult " \
+    "currently always divides/multiplies by alpha regardless of this choice."
 #define kParamPremultChannelR "R", "R channel from input", "r"
 #define kParamPremultChannelG "G", "G channel from input", "g"
 #define kParamPremultChannelB "B", "B channel from input", "b"
@@ -72,7 +73,9 @@ ofxsPremultDescribeParams(OFX::ImageEffectDescriptor &desc,
         }
     }
     {
-        // not yet implemented, for future use (whenever deep compositing is supported)
+        // Visible alongside the bool: ofxsUnPremult()/ofxsPremult() take this value but
+        // ignore it, always dividing/multiplying by alpha, so it is future use for whenever
+        // deep compositing is supported, not currently functional.
         OFX::ChoiceParamDescriptor* param = desc.defineChoiceParam(kParamPremultChannel);
         param->setLabel(kParamPremultChannelLabel);
         param->setHint(kParamPremultChannelHint);
@@ -81,7 +84,6 @@ ofxsPremultDescribeParams(OFX::ImageEffectDescriptor &desc,
         param->appendOption(kParamPremultChannelB);
         param->appendOption(kParamPremultChannelA);
         param->setDefault(3); // alpha
-        param->setIsSecret(true); // not yet implemented
         if (page) {
             page->addChild(*param);
         }
