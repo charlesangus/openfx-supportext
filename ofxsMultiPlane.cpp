@@ -657,7 +657,7 @@ struct MultiPlaneEffectPrivate
     }
 
     /**
-     * @brief The instanceChanged handler for the "All Planes" checkbox if the parameter was defined with
+     * @brief The instanceChanged handler for the "All Layers" checkbox if the parameter was defined with
      **/
     void handleAllPlanesCheckboxParamChanged();
 

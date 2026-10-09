@@ -73,9 +73,9 @@
 #define kMultiPlanePlaneParamOptionNone "none"
 #define kMultiPlanePlaneParamOptionNoneLabel "None"
 
-#define kMultiPlaneProcessAllPlanesParam "processAllPlanes"
-#define kMultiPlaneProcessAllPlanesParamLabel "All Planes"
-#define kMultiPlaneProcessAllPlanesParamHint "When checked all planes in input will be processed and output to the same plane as in input. It is useful for example to apply a Transform effect on all planes."
+#define kMultiPlaneProcessAllPlanesParam "processAllLayers"
+#define kMultiPlaneProcessAllPlanesParamLabel "All Layers"
+#define kMultiPlaneProcessAllPlanesParamHint "When checked all layers in input will be processed and output to the same layer as in input. It is useful for example to apply a Transform effect on all layers."
 
 
 
